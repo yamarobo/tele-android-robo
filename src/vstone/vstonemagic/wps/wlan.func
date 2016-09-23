@@ -1,0 +1,48 @@
+#!	/bin/sh
+
+enable_all() {
+	echo enable_all
+	NUM=`wpa_cli -iwlan0 list_networks | tail -n 1 | tr '\t' ','| tr ' ' ',' | cut -d "," -f 1`
+	NUM=`expr ${NUM} + 1`
+	for i in `seq 1 ${NUM}`
+	do
+		POS=`expr $i - 1`
+		echo $POS
+		wpa_cli -iwlan0 enable_network $POS
+	done
+	wpa_cli save_config
+}
+
+disable_all() {
+	echo disable_all
+	NUM=`wpa_cli -iwlan0 list_networks | tail -n 1 | tr '\t' ','| tr ' ' ',' | cut -d "," -f 1`
+	NUM=`expr ${NUM} + 1`
+	for i in `seq 1 ${NUM}`
+	do
+		POS=`expr $i - 1`
+		echo $POS
+		wpa_cli -iwlan0 disable_network $POS
+	done
+	wpa_cli save_config
+}
+
+setpriority5(){
+	echo setpriority5
+	NOWCNT=`wpa_cli -iwlan0 status | grep id | tail -n 1 | cut -d "=" -f 2`
+	echo "now ${NOWCNT}"
+	wpa_cli -iwlan0 set_network $NOWCNT "priority" "5"
+	wpa_cli save_config
+}
+
+setpriorityAll1(){
+	echo setpriorityAll1
+	NUM=`wpa_cli -iwlan0 list_networks | tail -n 1 | tr '\t' ','| tr ' ' ',' | cut -d "," -f 1`
+	NUM=`expr ${NUM} + 1`
+	for i in `seq 1 ${NUM}`
+	do
+		POS=`expr $i - 1`
+		echo $POS
+		wpa_cli -iwlan0 set_network $POS "priority" "1"
+	done
+	wpa_cli save_config
+}

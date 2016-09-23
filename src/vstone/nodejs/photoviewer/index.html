@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Animation</title>
+<meta http-equiv="pragma" content="non-cache">
+<meta http-equiv="cache-control" content="non-cache">
+<meta http-equiv="expires" content="0">
+
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<link rel="stylesheet" type="text/css" href="../css/lightgallery.css" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link media="only screen and (max-device-width:480px)" href="../css/smart.css" type="text/css" rel="stylesheet" />
+<link media="screen and (min-device-width:481px)" href="../css/pc.css" type="text/css" rel="stylesheet" />
+<!--[if IE]>
+<link href="css/pc.css" type="text/css" rel="stylesheet" />
+<![endif]-->
+
+</head>
+<body>
+
+	<div class="navibar">			
+			<div class="menu"  id="back_button"><img src="../img/sq_prev_icon&48.png"/ ><span>è¬Œï½»ç¹§?¿½</span></div>
+			<div class="menu"  id="select_button"><img src="../img/checkbox_checked_icon&48.png"/ ><span>é©•ï½¸è¬šï¿½</span></div>
+	</div>
+
+	<div class="imgFit" id="lightgallery" data-lightbox="image-set">
+	{photolist}
+	</div>
+
+	<script src="../js/jquery-2.1.4.min.js"></script>
+	<script src='../js/jquery.imagefit.js'></script>
+	<script src="../js/lightgallery.js"></script>
+	<script src="../js/lg-fullscreen.min.js"></script>
+	<!-- 
+	<script src="js/lg-thumbnail.min.js"></script>
+<script src="js/lg-autoplay.min.js"></script>
+<script src="js/lg-hash.min.js"></script>
+ -->
+
+	<script src="../js/lg-pager.min.js"></script>
+	<script src="../js/lg-video.min.js"></script>
+	<script src="../js/lg-zoom.min.js"></script>
+	<script src='../js/touchhouver.js'></script>
+	<script>
+		$(document).ready(function() {
+			var _click = (window.ontouchstart === undefined)? 'click' : 'touchstart';
+			
+			var $lg = $('#lightgallery');
+			$lg.lightGallery({
+			    thumbnail:false,
+			    animateThumb: false,
+			    showThumbByDefault: false
+			});
+			
+			document.getElementById("back_button").addEventListener(
+					_click,
+					function(event) {
+						console.log("back_button click");
+						history.back(-1);
+					}, false);
+
+			document.getElementById("select_button").addEventListener(
+					_click,
+					function(event) {
+						console.log("select_button click");
+						document.location = "select.html";
+					}, false);
+			
+		});
+		
+		$(window).load(function() {
+			
+			
+			  $('.imgFit a').imagefit({
+			        mode: 'inside', //è¬–ï¿½è³å£¹ã—ç¹§?½¤ç¹§?½ºç¸º?½®è³?½­ç¸º?½«èœˆï½¥ç¹§å¾Œï½‹ç¸ºä¹ï¿½?½¯ç¸º?½¿èœ?½ºç¸ºè¼”â—‹ç¹§ä¹Â°ç¸º?½®è¬–ï¿½è³?¿½: 'inside' or 'outside'.
+			    halign : 'center', //è¬–ï¿½è³å£¹ã—ç¹§?½¤ç¹§?½ºç¸º?½®ç¹æ‚¶ÎŸç¹ï¿½ç¹§?½¯ç¸º?½«èŸ?½¾ç¸ºå¶?½‹é?•ï½»èœ’ä¸Šï¿½?½®é©Ÿå’²?½½?½®è®“ï½ªè´å’²?½½?½®: 'left', 'center' or 'right'
+			    valign : 'middle' , //è¬–ï¿½è³å£¹ã—ç¹§?½¤ç¹§?½ºç¸º?½®ç¹æ‚¶ÎŸç¹ï¿½ç¹§?½¯ç¸º?½«èŸ?½¾ç¸ºå¶?½‹é?•ï½»èœ’ä¸Šï¿½?½®é©Ÿå’²?½½?½®é‚µ?½¦è´å’²?½½?½®: 'top', 'middle' or 'bottom'
+			        force : false //é€•ï½»èœ’ä¸Šï¿½?½®ç¹§?½µç¹§?½¤ç¹§?½ºç¸ºæ¢§æ¬?è³å£¹ã—ç¹§?½¤ç¹§?½ºç¹§åŒ»?½ŠèŸ†ä¸Šï¼?ç¸º?¿½è£?½´èœ·åŒ»?½‚ç¹ï½ªç¹§?½µç¹§?½¤ç¹§?½ºç¸ºå¶?½‹ç¸ºä¹â?ç¸º?¿½ç¸º?¿½:true or false 
+			        });
+			});
+
+	</script>
+</body>
+</html>

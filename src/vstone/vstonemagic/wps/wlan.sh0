@@ -1,0 +1,52 @@
+#!	/bin/sh
+CURRENT=$(cd $(dirname $0) && pwd)
+cd $CURRENT
+
+. ./wlan.func
+
+systemctl enable wpa_supplicant
+wpa_cli -iwlan0 disconnect
+
+#echo "remove all ssid" 
+#for i in `wpa_cli -iwlan0 list_networks | grep ^[0-9] | cut -f1`; do wpa_cli -iwlan0 remove_network $i; done
+
+#echo "save config"
+#wpa_cli -iwlan0 save_config
+#sleep 1
+
+systemctl restart wpa_supplicant
+sleep 2
+
+setpriorityAll1
+
+if wpa_cli -iwlan0 list_networks | grep $1 >/dev/null ; then
+	echo found
+	DELCONF=`wpa_cli -iwlan0 list_networks | grep $1 | tr '\t' ','| tr ' ' ',' | cut -d "," -f 1`
+	wpa_cli -iwlan0 remove_network $DELCONF
+fi
+
+echo "add network"
+NOWCONF=`wpa_cli -iwlan0 add_network`
+
+echo "set ssid $1"
+wpa_cli -iwlan0 set_network $NOWCONF ssid \"$1\"
+
+if echo ${3} | grep WEP >/dev/null ; then
+	echo "set wep_key0 $2"
+	wpa_cli -iwlan0 set_network $NOWCONF wep_key0 \"$2\"
+else
+	echo "set psk $2"
+	wpa_cli -iwlan0 set_network $NOWCONF psk \"$2\"
+fi
+
+wpa_cli -iwlan0 set_network $NOWCONF "priority" "5"
+
+echo "enable network"
+wpa_cli -iwlan0 enable_network $NOWCONF
+
+echo "save config"
+wpa_cli -iwlan0 save_config
+
+sleep 3
+systemctl restart wpa_supplicant
+
