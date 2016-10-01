@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/Users/ushumpei/Documents/telenoid/src/lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="/Users/ushumpei/Documents/telenoid/src/lib/core-2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/ushumpei/Documents/telenoid/src/lib/javase-2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/ushumpei/Documents/telenoid/src/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/ushumpei/Documents/telenoid/src/lib/opencv-310.jar"/>
+	<classpathentry kind="lib" path="/Users/ushumpei/Documents/telenoid/src/lib/sotalib.jar"/>
+	<classpathentry kind="lib" path="/Users/ushumpei/Documents/telenoid/src/lib/SRClientHelper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
