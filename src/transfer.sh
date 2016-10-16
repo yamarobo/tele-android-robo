@@ -1,4 +1,4 @@
-application_name=FaceDetect
+application_name=HttpServer
 ip_address=192.168.1.16
 
 ssh root@${ip_address} mkdir -p /home/vstone/vstonemagic/app/jar/${application_name}/

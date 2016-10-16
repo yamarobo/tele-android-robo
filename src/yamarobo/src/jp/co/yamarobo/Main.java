@@ -9,7 +9,7 @@ public class Main {
 
   public static void main(String[] args) {
     setUpRobot();
-    FaceDetect application = new FaceDetect();
+    HttpServer application = new HttpServer();
     application.execute();
     terminateRobot();
 
