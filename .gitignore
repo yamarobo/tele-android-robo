@@ -1,4 +1,16 @@
+# Eclipse
+.project
+.classpath
+.settings
+.gradle
+
+# Build
+build
+bin
+
+# Other
+*.log
 *.swp
+*.bak
 .DS_Store
 tags
-bin

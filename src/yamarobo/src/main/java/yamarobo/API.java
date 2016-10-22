@@ -1,4 +1,4 @@
-package jp.co.yamarobo;
+package yamarobo;
 
 public class API {
 

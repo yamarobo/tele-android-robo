@@ -1,4 +1,4 @@
-package jp.co.yamarobo;
+package yamarobo;
 
 import java.io.BufferedReader;
 import java.io.File;

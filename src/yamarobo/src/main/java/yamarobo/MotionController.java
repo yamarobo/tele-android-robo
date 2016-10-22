@@ -1,4 +1,4 @@
-package jp.co.yamarobo;
+package yamarobo;
 
 import java.awt.Color;
 

@@ -1,4 +1,4 @@
-package jp.co.yamarobo;
+package yamarobo;
 
 import jp.vstone.RobotLib.CRobotMem;
 import jp.vstone.RobotLib.CSotaMotion;

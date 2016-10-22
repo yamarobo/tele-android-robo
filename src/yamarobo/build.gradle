@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+sourceCompatibility = targetCompatibility = '1.8'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+	compile 'org.eclipse.jetty.aggregate:jetty-all-server:8.2.0.v20160908'
+	compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+jar {
+  doFirst {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } } 
+  }
+  exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA' 
+  manifest {
+    attributes 'Implementation-Title': 'Yamaoka Robotics, Inc.'
+    attributes 'Implementation-Version': 1.0
+    attributes "Main-Class" : "yamarobo.Main"
+  }
+  from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
