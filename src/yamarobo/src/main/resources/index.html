@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Robot Socket</title>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <h1>Robot Socket</h1>
+  <p>connection status: <span id="connectionStatus">not connected</span></p>
+  <div id="messageBox">
+    <form id="createMessage">
+      <fieldset>
+        <legend>Create Message</legend>
+        <label for="controller">Controller: </label>
+        <select name="controller">
+          <option value="motion">motion</option>
+          <option value="sing">sing</option>
+        </select>
+        <br>
+        <label for="action">Action: </label>
+        <input name="action" type="text" placeholder="input action" value="manual" />
+        <br>
+        <div id="messageData">
+        Data:
+          <div id="defautlItem" class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="1" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+          <div class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="2" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+          <div class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="3" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+          <div class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="4" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+          <div class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="5" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+          <div class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="6" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+          <div class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="7" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+          <div class="keyValueItem">
+            <label for="data[key][]">key: </label><input name="data[key][]" type="text" placeholder="input data key" value="8" />
+            <label for="data[val][]">value: </label><input name="data[val][]" type="text" placeholder="input data value" />
+          </div>
+        </div>
+        <button id="submitMessage">submit</button>
+      </fieldset>
+    </form>
+    <div id="messageBoard">
+      <ul id="itemList">
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
