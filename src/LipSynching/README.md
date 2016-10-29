@@ -23,7 +23,7 @@
 ├── sound
 │   └── weather_report.wav
 ├── src
-│   └── yamarobo
+│   └── sample
 │       ├── LipSynching.java
 │       └── Main.java
 └── title.wav
@@ -38,15 +38,15 @@
 Manifest-Version: 1.0
 Class-Path: . /home/vstone/lib/core-2.2.jar /home/vstone/lib/gson-2.6.1.jar /home/vstone/lib/javase-2.2.jar /home/vstone/lib/jna-4.1.0.jar /home/vstone/lib/opencv-310.jar /home/vstone/lib/sotalib.jar /home/vstone/lib/SRClientHelper.jar ./lib/LinphonecConnector.jar 
 Created-By: 1.8.0_51 (Oracle Corporation)
-Main-Class: yamarobo.Main
+Main-Class: sample.Main
 ```
 (起動クラス`Main-Class`の記述はパッケージ名を含むFQDN)
 
 アプリのディレクトリに移動して以下のコマンドを実行。
 
 ```sh
-javac src/yamarobo/*.java -classpath 'lib/*' -d bin
-jar cfm LipSynching.jar META-INF/MANIFEST.MF title.wav sound -C bin yamarobo
+javac src/sample/*.java -classpath 'lib/*' -d bin
+jar cfm LipSynching.jar META-INF/MANIFEST.MF title.wav sound -C bin sample
 ```
 
 説明)

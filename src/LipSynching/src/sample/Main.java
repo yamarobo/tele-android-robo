@@ -1,4 +1,4 @@
-package yamarobo;
+package sample;
 
 import java.util.Random;
 
