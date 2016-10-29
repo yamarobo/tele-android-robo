@@ -2,7 +2,7 @@ current_working_dir=`pwd`
 
 # 対象ごとに変更(特にapplication_name, package_name)
 application_name=NodResponse
-package_name=yamarobo
+package_name=sample
 application_root=/Users/ushumpei/Documents/telenoid/src/${application_name}
 main_class=${package_name}.Main
 

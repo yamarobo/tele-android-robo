@@ -1,4 +1,4 @@
-package yamarobo;
+package sample;
 
 import static jp.vstone.RobotLib.CTelenoidMotion.SV_HEAD_P;
 import static jp.vstone.RobotLib.CTelenoidMotion.SV_HEAD_R;
